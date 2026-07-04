@@ -2724,6 +2724,22 @@ h1 {
       }
     }
 
+
+    /* ===== v43: mobile MVP label spacing + countdown stability ===== */
+    @media (max-width: 820px) {
+      .mvp-card.is-placeholder .mvp-label {
+        word-spacing: .18em !important;
+        letter-spacing: .055em !important;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .mvp-card.is-placeholder .mvp-label {
+        font-size: clamp(16px, 4.25vw, 20px) !important;
+        word-spacing: .14em !important;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -2875,7 +2891,7 @@ h1 {
       <article class="mvp-card is-placeholder">
         <div class="mvp-live">
           <div class="mvp-title-box">
-            <h2 class="mvp-label">Лучший<br>игрок<br>матча</h2>
+            <h2 class="mvp-label">Лучший <br>игрок <br>матча</h2>
             <div class="mvp-label-line"></div>
             <div class="mvp-match-date" id="mvp-date">6 июля 2026</div>
           </div>
@@ -3594,7 +3610,34 @@ h1 {
     }
 
     updateCountdown();
-    setInterval(updateCountdown, 1000);
+
+    let countdownTimerId = null;
+
+    function startCountdownLoop() {
+      if (countdownTimerId) clearTimeout(countdownTimerId);
+
+      const tick = () => {
+        updateCountdown();
+        const delay = 1000 - (Date.now() % 1000);
+        countdownTimerId = setTimeout(tick, delay + 20);
+      };
+
+      tick();
+    }
+
+    startCountdownLoop();
+
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) {
+        updateCountdown();
+        startCountdownLoop();
+      }
+    });
+
+    window.addEventListener("focus", () => {
+      updateCountdown();
+      startCountdownLoop();
+    });
     setupParallax();
     loadTournamentData();
   </script>
