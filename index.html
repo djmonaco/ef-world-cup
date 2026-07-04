@@ -2411,6 +2411,319 @@ h1 {
       }
     }
 
+
+    /* ===== Mobile fix v42: compact MVP placeholder + full table names ===== */
+
+    @media (max-width: 820px) {
+      /* Второй экран: пока ЛИМ не определён — делаем компактную аккуратную карточку без кривого фона */
+      .mvp-card.is-placeholder {
+        height: auto !important;
+        min-height: 210px !important;
+        border-radius: 24px !important;
+        background:
+          radial-gradient(circle at 92% 14%, rgba(199,255,50,.13), transparent 28%),
+          linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.025)) !important;
+        box-shadow:
+          0 24px 60px rgba(0,0,0,.38),
+          0 0 0 1px rgba(199,255,50,.18),
+          inset 0 1px 0 rgba(255,255,255,.10) !important;
+      }
+
+      .mvp-card.is-placeholder::before {
+        background:
+          linear-gradient(120deg, transparent 0 20%, rgba(255,255,255,.065) 20% 22%, transparent 22%),
+          radial-gradient(circle at 0% 100%, rgba(36,207,255,.10), transparent 34%) !important;
+        opacity: 1 !important;
+      }
+
+      .mvp-card.is-placeholder .mvp-live {
+        position: relative !important;
+        inset: auto !important;
+        min-height: 210px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        padding: 20px !important;
+      }
+
+      .mvp-card.is-placeholder .mvp-title-box {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        max-width: none !important;
+        width: 100% !important;
+        padding: 0 !important;
+        transform: none !important;
+      }
+
+      .mvp-card.is-placeholder .mvp-label {
+        max-width: none !important;
+        font-size: clamp(17px, 4.6vw, 22px) !important;
+        line-height: 1 !important;
+        letter-spacing: .075em !important;
+        white-space: nowrap !important;
+      }
+
+      .mvp-card.is-placeholder .mvp-label br {
+        display: none !important;
+      }
+
+      .mvp-card.is-placeholder .mvp-label-line {
+        width: 64px !important;
+        height: 1px !important;
+        margin-top: 12px !important;
+      }
+
+      .mvp-card.is-placeholder .mvp-match-date {
+        margin-top: 11px !important;
+        font-size: 10px !important;
+      }
+
+      .mvp-card.is-placeholder .mvp-info {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 34px 0 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        transform: none !important;
+      }
+
+      .mvp-card.is-placeholder .mvp-name-placeholder {
+        max-width: 100% !important;
+        font-size: clamp(20px, 5.25vw, 25px) !important;
+        line-height: 1.12 !important;
+        letter-spacing: .005em !important;
+        text-transform: none !important;
+      }
+
+      /* Таблица: без горизонтального скролла, но имена показываем полностью */
+      .tournament-container {
+        width: min(100% - 10px, 680px) !important;
+      }
+
+      .tab-panel {
+        padding: 6px !important;
+      }
+
+      .leaderboard-wrap {
+        overflow-x: visible !important;
+        padding-bottom: 0 !important;
+      }
+
+      .leaderboard {
+        width: 100% !important;
+        min-width: 0 !important;
+        table-layout: fixed !important;
+        border-spacing: 0 6px !important;
+      }
+
+      .leaderboard th:nth-child(1),
+      .leaderboard td:nth-child(1) {
+        width: 51% !important;
+      }
+
+      .leaderboard th:nth-child(2),
+      .leaderboard td:nth-child(2),
+      .leaderboard th:nth-child(3),
+      .leaderboard td:nth-child(3),
+      .leaderboard th:nth-child(4),
+      .leaderboard td:nth-child(4),
+      .leaderboard th:nth-child(5),
+      .leaderboard td:nth-child(5) {
+        width: 4.9% !important;
+      }
+
+      .leaderboard th:nth-child(6),
+      .leaderboard td:nth-child(6) {
+        width: 6.8% !important;
+      }
+
+      .leaderboard th:nth-child(7),
+      .leaderboard td:nth-child(7) {
+        width: 8.4% !important;
+      }
+
+      .leaderboard th:nth-child(8),
+      .leaderboard td:nth-child(8) {
+        width: 14.2% !important;
+      }
+
+      .leaderboard th {
+        padding: 0 1px 4px !important;
+        font-size: clamp(7px, 1.95vw, 9px) !important;
+        letter-spacing: .02em !important;
+      }
+
+      .leaderboard td {
+        padding: 8px 1px !important;
+        font-size: clamp(9px, 2.25vw, 10.5px) !important;
+        line-height: 1 !important;
+        overflow: visible !important;
+      }
+
+      .leaderboard td:first-child {
+        padding-left: 4px !important;
+        overflow: visible !important;
+      }
+
+      .leaderboard td:last-child {
+        padding-right: 3px !important;
+      }
+
+      .rank-team {
+        min-width: 0 !important;
+        width: 100% !important;
+        gap: 3px !important;
+        align-items: center !important;
+      }
+
+      .rank-num {
+        width: 16px !important;
+        height: 16px !important;
+        min-width: 16px !important;
+        border-radius: 6px !important;
+        font-size: 8.5px !important;
+      }
+
+      .flag-mini {
+        width: 19px !important;
+        height: 13px !important;
+        min-width: 19px !important;
+        border-radius: 3px !important;
+      }
+
+      .team-name {
+        min-width: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        gap: 2px !important;
+      }
+
+      .team-name b {
+        display: block !important;
+        max-width: none !important;
+        width: 100% !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+        font-size: clamp(8.1px, 2.15vw, 9.7px) !important;
+        line-height: 1.05 !important;
+        letter-spacing: .002em !important;
+      }
+
+      .team-name span {
+        display: block !important;
+        max-width: none !important;
+        width: 100% !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+        font-size: clamp(6.8px, 1.8vw, 8.2px) !important;
+        line-height: 1.04 !important;
+      }
+
+      .pts {
+        font-size: clamp(11px, 2.75vw, 13.5px) !important;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .leaderboard th:nth-child(1),
+      .leaderboard td:nth-child(1) {
+        width: 52% !important;
+      }
+
+      .leaderboard th:nth-child(8),
+      .leaderboard td:nth-child(8) {
+        width: 13.2% !important;
+      }
+
+      .team-name b {
+        font-size: clamp(7.6px, 2.1vw, 8.8px) !important;
+      }
+
+      .team-name span {
+        font-size: clamp(6.5px, 1.75vw, 7.6px) !important;
+      }
+
+      .leaderboard td {
+        font-size: 9px !important;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .tournament-container {
+        width: min(100% - 6px, 360px) !important;
+      }
+
+      .tab-panel {
+        padding: 4px !important;
+      }
+
+      .leaderboard th:nth-child(1),
+      .leaderboard td:nth-child(1) {
+        width: 53% !important;
+      }
+
+      .leaderboard th:nth-child(2),
+      .leaderboard td:nth-child(2),
+      .leaderboard th:nth-child(3),
+      .leaderboard td:nth-child(3),
+      .leaderboard th:nth-child(4),
+      .leaderboard td:nth-child(4),
+      .leaderboard th:nth-child(5),
+      .leaderboard td:nth-child(5) {
+        width: 4.6% !important;
+      }
+
+      .leaderboard th:nth-child(6),
+      .leaderboard td:nth-child(6) {
+        width: 6.3% !important;
+      }
+
+      .leaderboard th:nth-child(7),
+      .leaderboard td:nth-child(7) {
+        width: 7.9% !important;
+      }
+
+      .leaderboard th:nth-child(8),
+      .leaderboard td:nth-child(8) {
+        width: 12.4% !important;
+      }
+
+      .rank-num {
+        width: 14px !important;
+        height: 14px !important;
+        min-width: 14px !important;
+        font-size: 7.5px !important;
+      }
+
+      .flag-mini {
+        width: 17px !important;
+        height: 12px !important;
+        min-width: 17px !important;
+      }
+
+      .team-name b {
+        font-size: 7.2px !important;
+      }
+
+      .team-name span {
+        font-size: 6.2px !important;
+      }
+    }
+
 </style>
 </head>
 <body>
