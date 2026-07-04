@@ -1091,6 +1091,22 @@ h1 {
       font-weight: 500;
     }
 
+    .leaderboard .col-win {
+      color: #34a853 !important;
+      text-shadow: 0 0 14px rgba(52,168,83,.18);
+    }
+
+    .leaderboard .col-draw {
+      color: #fbbc04 !important;
+      text-shadow: 0 0 14px rgba(251,188,4,.16);
+    }
+
+    .leaderboard .col-loss {
+      color: #ea4335 !important;
+      text-shadow: 0 0 14px rgba(234,67,53,.16);
+    }
+
+
     .pts {
       color: var(--lime) !important;
       font-family: "Rajdhani", "Exo 2", Inter, system-ui, sans-serif;
@@ -1539,9 +1555,9 @@ h1 {
                 <tr>
                   <th>Игрок / Сборная</th>
                   <th>И</th>
-                  <th>В</th>
-                  <th>Н</th>
-                  <th>П</th>
+                  <th class="col-win">В</th>
+                  <th class="col-draw">Н</th>
+                  <th class="col-loss">П</th>
                   <th>ЛИМ</th>
                   <th>ТОТО</th>
                   <th>Очки</th>
@@ -1556,7 +1572,7 @@ h1 {
                       <span class="team-name"><b>Кюрасао</b><span>Влад Дёмин</span></span>
                     </div>
                   </td>
-                  <td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>2</td><td class="pts">6</td>
+                  <td>1</td><td class="col-win">1</td><td class="col-draw">0</td><td class="col-loss">0</td><td>1</td><td>2</td><td class="pts">6</td>
                 </tr>
                 <tr>
                   <td>
@@ -1566,7 +1582,7 @@ h1 {
                       <span class="team-name"><b>Бразилия</b><span>пример игрока</span></span>
                     </div>
                   </td>
-                  <td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td class="pts">2</td>
+                  <td>1</td><td class="col-win">0</td><td class="col-draw">1</td><td class="col-loss">0</td><td>0</td><td>1</td><td class="pts">2</td>
                 </tr>
                 <tr>
                   <td>
@@ -1576,7 +1592,7 @@ h1 {
                       <span class="team-name"><b>Португалия</b><span>пример игрока</span></span>
                     </div>
                   </td>
-                  <td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td class="pts">2</td>
+                  <td>1</td><td class="col-win">0</td><td class="col-draw">1</td><td class="col-loss">0</td><td>0</td><td>1</td><td class="pts">2</td>
                 </tr>
                 <tr>
                   <td>
@@ -1586,7 +1602,7 @@ h1 {
                       <span class="team-name"><b>Япония</b><span>пример игрока</span></span>
                     </div>
                   </td>
-                  <td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td class="pts">0</td>
+                  <td>1</td><td class="col-win">0</td><td class="col-draw">0</td><td class="col-loss">1</td><td>0</td><td>0</td><td class="pts">0</td>
                 </tr>
               </tbody>
             </table>
@@ -2082,9 +2098,9 @@ h1 {
             </div>
           </td>
           <td>${escapeHtml(row.m)}</td>
-          <td>${escapeHtml(row.w)}</td>
-          <td>${escapeHtml(row.d)}</td>
-          <td>${escapeHtml(row.l)}</td>
+          <td class="col-win">${escapeHtml(row.w)}</td>
+          <td class="col-draw">${escapeHtml(row.d)}</td>
+          <td class="col-loss">${escapeHtml(row.l)}</td>
           <td>${escapeHtml(row.lim)}</td>
           <td>${escapeHtml(row.toto)}</td>
           <td class="pts">${escapeHtml(row.score)}</td>
