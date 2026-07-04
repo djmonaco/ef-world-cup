@@ -2740,6 +2740,68 @@ h1 {
       }
     }
 
+
+    /* ===== v44: guaranteed LIM label spacing + slightly larger player names ===== */
+
+    @media (max-width: 820px) {
+      /* Гарантированно выводим заголовок ЛИМ с пробелами, независимо от <br> внутри HTML */
+      .mvp-card.is-placeholder .mvp-label {
+        font-size: 0 !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+      }
+
+      .mvp-card.is-placeholder .mvp-label::after {
+        content: "Лучший игрок матча";
+        display: block;
+        font-family: "Rajdhani", "Exo 2", Inter, system-ui, sans-serif;
+        font-size: clamp(17px, 4.6vw, 22px);
+        line-height: 1;
+        letter-spacing: .055em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: rgba(219,255,116,.96);
+        text-shadow: 0 0 14px rgba(199,255,50,.11);
+        word-spacing: .16em;
+      }
+
+      /* Имена в таблице чуть крупнее, но без обрезания */
+      .team-name b {
+        font-size: clamp(8.8px, 2.34vw, 10.7px) !important;
+        line-height: 1.06 !important;
+      }
+
+      .team-name span {
+        font-size: clamp(7px, 1.86vw, 8.5px) !important;
+        line-height: 1.05 !important;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .mvp-card.is-placeholder .mvp-label::after {
+        font-size: clamp(16px, 4.25vw, 20px);
+        word-spacing: .14em;
+      }
+
+      .team-name b {
+        font-size: clamp(8.1px, 2.22vw, 9.4px) !important;
+      }
+
+      .team-name span {
+        font-size: clamp(6.7px, 1.82vw, 7.9px) !important;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .team-name b {
+        font-size: 7.7px !important;
+      }
+
+      .team-name span {
+        font-size: 6.5px !important;
+      }
+    }
+
 </style>
 </head>
 <body>
