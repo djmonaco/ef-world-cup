@@ -3324,14 +3324,10 @@ h1 {
       };
 
       let text = raw.toLowerCase().replaceAll("ё", "е").trim();
-      let hours = DEFAULT_MATCH_HOUR;
-      let minutes = DEFAULT_MATCH_MINUTE;
-
-      const timeMatch = text.match(/(\d{1,2})[:.](\d{2})/);
-      if (timeMatch) {
-        hours = Number(timeMatch[1]);
-        minutes = Number(timeMatch[2]);
-      }
+      // Время матча не берём из Google Таблицы.
+      // Дата подтягивается из MATCHES, а время всегда фиксированное: 19:30.
+      const hours = DEFAULT_MATCH_HOUR;
+      const minutes = DEFAULT_MATCH_MINUTE;
 
       let day = null;
       let month = null;
