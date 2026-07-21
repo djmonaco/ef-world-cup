@@ -2802,6 +2802,219 @@ h1 {
       }
     }
 
+
+    /* ===== v45: dynamic match date + simplified MVP card without photo ===== */
+
+    .mvp-card {
+      min-height: auto !important;
+      overflow: hidden !important;
+      padding: clamp(26px, 4vw, 42px) !important;
+      border-radius: 32px !important;
+      background:
+        radial-gradient(circle at 88% 18%, rgba(199,255,50,.13), transparent 30%),
+        radial-gradient(circle at 10% 100%, rgba(36,207,255,.12), transparent 36%),
+        linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.025)) !important;
+      border: 1px solid rgba(255,255,255,.12) !important;
+      box-shadow:
+        0 34px 86px rgba(0,0,0,.36),
+        0 0 0 1px rgba(199,255,50,.12),
+        inset 0 1px 0 rgba(255,255,255,.10) !important;
+      backdrop-filter: blur(12px);
+    }
+
+    .mvp-card::before {
+      background:
+        linear-gradient(120deg, transparent 0 20%, rgba(255,255,255,.07) 20% 22%, transparent 22%),
+        linear-gradient(90deg, rgba(199,255,50,.09), transparent 42%) !important;
+      opacity: 1 !important;
+    }
+
+    .mvp-card::after {
+      display: none !important;
+    }
+
+    .mvp-live {
+      position: relative !important;
+      inset: auto !important;
+      display: grid !important;
+      grid-template-columns: minmax(220px, .7fr) minmax(260px, 1fr) !important;
+      align-items: center !important;
+      gap: clamp(24px, 5vw, 64px) !important;
+      padding: 0 !important;
+      z-index: 3 !important;
+    }
+
+    .mvp-title-box {
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      align-self: center !important;
+      max-width: none !important;
+      padding: 0 !important;
+      transform: none !important;
+    }
+
+    .mvp-label {
+      max-width: none !important;
+      font-size: clamp(25px, 3vw, 42px) !important;
+      line-height: 1 !important;
+      letter-spacing: .055em !important;
+      white-space: normal !important;
+    }
+
+    .mvp-label br {
+      display: none !important;
+    }
+
+    .mvp-label-line {
+      width: 78px !important;
+      height: 1px !important;
+      margin-top: 16px !important;
+    }
+
+    .mvp-match-date {
+      margin-top: 14px !important;
+      font-size: clamp(12px, 1vw, 14px) !important;
+      letter-spacing: .11em !important;
+    }
+
+    .mvp-spacer {
+      display: none !important;
+    }
+
+    .mvp-info {
+      position: relative !important;
+      left: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+      width: auto !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      transform: none !important;
+      align-self: center !important;
+    }
+
+    .mvp-name,
+    .mvp-name-placeholder {
+      max-width: 100% !important;
+      font-size: clamp(32px, 4.4vw, 62px) !important;
+      line-height: .96 !important;
+      letter-spacing: .02em !important;
+      text-transform: uppercase !important;
+    }
+
+    .mvp-name-placeholder {
+      font-size: clamp(24px, 3.1vw, 40px) !important;
+      line-height: 1.06 !important;
+      text-transform: none !important;
+    }
+
+    .mvp-country {
+      margin-top: 16px !important;
+      font-size: clamp(13px, 1vw, 15px) !important;
+    }
+
+    .mvp-points {
+      display: none !important;
+    }
+
+    @media (max-width: 820px) {
+      .mvp-section {
+        padding: 28px 0 38px !important;
+      }
+
+      .mvp-card,
+      .mvp-card.is-placeholder {
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 22px !important;
+        border-radius: 24px !important;
+      }
+
+      .mvp-live,
+      .mvp-card.is-placeholder .mvp-live {
+        position: relative !important;
+        inset: auto !important;
+        display: block !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+      }
+
+      .mvp-label,
+      .mvp-card.is-placeholder .mvp-label {
+        font-size: 0 !important;
+        white-space: normal !important;
+      }
+
+      .mvp-label::after,
+      .mvp-card.is-placeholder .mvp-label::after {
+        content: "Лучший игрок матча" !important;
+        display: block !important;
+        font-family: "Rajdhani", "Exo 2", Inter, system-ui, sans-serif !important;
+        font-size: clamp(20px, 5.1vw, 28px) !important;
+        line-height: 1 !important;
+        letter-spacing: .055em !important;
+        text-transform: uppercase !important;
+        font-weight: 600 !important;
+        color: rgba(219,255,116,.96) !important;
+        text-shadow: 0 0 14px rgba(199,255,50,.11) !important;
+        word-spacing: .16em !important;
+      }
+
+      .mvp-label-line {
+        width: 64px !important;
+        margin-top: 13px !important;
+      }
+
+      .mvp-match-date,
+      .mvp-card.is-placeholder .mvp-match-date {
+        margin-top: 12px !important;
+        font-size: 10px !important;
+        letter-spacing: .10em !important;
+      }
+
+      .mvp-info,
+      .mvp-card.is-placeholder .mvp-info {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: auto !important;
+        max-width: none !important;
+        margin: 34px 0 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+      }
+
+      .mvp-name,
+      .mvp-name-placeholder,
+      .mvp-card.is-placeholder .mvp-name-placeholder {
+        max-width: 100% !important;
+        font-size: clamp(24px, 7vw, 34px) !important;
+        line-height: 1.04 !important;
+      }
+
+      .mvp-name-placeholder,
+      .mvp-card.is-placeholder .mvp-name-placeholder {
+        font-size: clamp(20px, 5.4vw, 25px) !important;
+        line-height: 1.12 !important;
+        text-transform: none !important;
+      }
+
+      .mvp-country {
+        margin-top: 12px !important;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -2939,7 +3152,7 @@ h1 {
 
           <div class="match-date">
             <span class="calendar-icon">▣</span>
-            <span>6 июля, 19:30 - Центральный стадион</span>
+            <span id="next-match-date">6 июля, 19:30 - Центральный стадион</span>
           </div>
         </section>
       </main>
@@ -3061,6 +3274,11 @@ h1 {
 
     const KRASNOYARSK_OFFSET_MS = 7 * 60 * 60 * 1000;
     const MATCH_DURATION_MS = 90 * 60 * 1000;
+    const DEFAULT_MATCH_HOUR = 19;
+    const DEFAULT_MATCH_MINUTE = 30;
+    const DEFAULT_LOCATION = "Центральный стадион";
+    const nextMatchDateEl = document.getElementById("next-match-date");
+    let matchSchedule = [];
 
     function getNextMondayMatch(nowMs) {
       const localNow = new Date(nowMs + KRASNOYARSK_OFFSET_MS);
@@ -3086,6 +3304,133 @@ h1 {
       return { matchStart, matchEnd };
     }
 
+    function parseSheetDateToKrasnoyarskMs(value) {
+      const raw = cleanValue(value);
+      if (!raw) return null;
+
+      const monthMap = {
+        "января": 1, "январь": 1,
+        "февраля": 2, "февраль": 2,
+        "марта": 3, "март": 3,
+        "апреля": 4, "апрель": 4,
+        "мая": 5, "май": 5,
+        "июня": 6, "июнь": 6,
+        "июля": 7, "июль": 7,
+        "августа": 8, "август": 8,
+        "сентября": 9, "сентябрь": 9,
+        "октября": 10, "октябрь": 10,
+        "ноября": 11, "ноябрь": 11,
+        "декабря": 12, "декабрь": 12
+      };
+
+      let text = raw.toLowerCase().replaceAll("ё", "е").trim();
+      let hours = DEFAULT_MATCH_HOUR;
+      let minutes = DEFAULT_MATCH_MINUTE;
+
+      const timeMatch = text.match(/(\d{1,2})[:.](\d{2})/);
+      if (timeMatch) {
+        hours = Number(timeMatch[1]);
+        minutes = Number(timeMatch[2]);
+      }
+
+      let day = null;
+      let month = null;
+      let year = 2026;
+
+      const googleDateMatch = text.match(/date\((\d{4}),\s*(\d{1,2}),\s*(\d{1,2})/i);
+      if (googleDateMatch) {
+        year = Number(googleDateMatch[1]);
+        month = Number(googleDateMatch[2]) + 1;
+        day = Number(googleDateMatch[3]);
+      }
+
+      const isoMatch = text.match(/(\d{4})-(\d{1,2})-(\d{1,2})/);
+      if (!day && isoMatch) {
+        year = Number(isoMatch[1]);
+        month = Number(isoMatch[2]);
+        day = Number(isoMatch[3]);
+      }
+
+      const dotMatch = text.match(/(\d{1,2})[./-](\d{1,2})(?:[./-](\d{2,4}))?/);
+      if (!day && dotMatch) {
+        day = Number(dotMatch[1]);
+        month = Number(dotMatch[2]);
+        if (dotMatch[3]) {
+          year = Number(dotMatch[3]);
+          if (year < 100) year += 2000;
+        }
+      }
+
+      const ruMatch = text.match(/(\d{1,2})\s+([а-я]+)/);
+      if (!day && ruMatch) {
+        day = Number(ruMatch[1]);
+        month = monthMap[ruMatch[2]];
+        const yearMatch = text.match(/\b(20\d{2})\b/);
+        if (yearMatch) year = Number(yearMatch[1]);
+      }
+
+      if (!day || !month || !year) return null;
+
+      const localMs = Date.UTC(year, month - 1, day, hours, minutes, 0);
+      return localMs - KRASNOYARSK_OFFSET_MS;
+    }
+
+    function formatMatchDate(ms, withYear = false) {
+      const local = new Date(ms + KRASNOYARSK_OFFSET_MS);
+      const months = [
+        "января", "февраля", "марта", "апреля", "мая", "июня",
+        "июля", "августа", "сентября", "октября", "ноября", "декабря"
+      ];
+
+      const day = local.getUTCDate();
+      const month = months[local.getUTCMonth()];
+      const year = local.getUTCFullYear();
+
+      return withYear ? `${day} ${month} ${year}` : `${day} ${month}`;
+    }
+
+    function formatMatchDateLine(ms) {
+      const local = new Date(ms + KRASNOYARSK_OFFSET_MS);
+      const hours = String(local.getUTCHours()).padStart(2, "0");
+      const minutes = String(local.getUTCMinutes()).padStart(2, "0");
+      return `${formatMatchDate(ms)}, ${hours}:${minutes} - ${DEFAULT_LOCATION}`;
+    }
+
+    function buildMatchSchedule(rawMatches) {
+      const seen = new Set();
+
+      return rawMatches
+        .map((item) => {
+          const dateValue = getByHeader(item, ["DATE", "ДАТА"], 2);
+          const startMs = parseSheetDateToKrasnoyarskMs(dateValue);
+          if (!startMs) return null;
+
+          const key = String(startMs);
+          if (seen.has(key)) return null;
+          seen.add(key);
+
+          return {
+            start: startMs,
+            end: startMs + MATCH_DURATION_MS,
+            label: formatMatchDateLine(startMs),
+            fullDate: formatMatchDate(startMs, true)
+          };
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.start - b.start);
+    }
+
+    function getNextScheduledMatch(nowMs) {
+      if (!matchSchedule.length) return null;
+      return matchSchedule.find((match) => nowMs < match.end) || matchSchedule[matchSchedule.length - 1];
+    }
+
+    function setMatchSchedule(rawMatches) {
+      matchSchedule = buildMatchSchedule(rawMatches || []);
+      updateCountdown();
+    }
+
+
     function renderTime(days, hours, minutes, seconds) {
       targetCountdown.innerHTML = `
         <div class="time"><b>${days}</b><span>дней</span></div>
@@ -3097,7 +3442,13 @@ h1 {
 
     function updateCountdown() {
       const now = Date.now();
-      const { matchStart, matchEnd } = getNextMondayMatch(now);
+      const scheduledMatch = getNextScheduledMatch(now);
+      const matchStart = scheduledMatch ? scheduledMatch.start : getNextMondayMatch(now).matchStart;
+      const matchEnd = scheduledMatch ? scheduledMatch.end : getNextMondayMatch(now).matchEnd;
+
+      if (nextMatchDateEl) {
+        nextMatchDateEl.textContent = scheduledMatch ? scheduledMatch.label : "6 июля, 19:30 - Центральный стадион";
+      }
 
       if (now >= matchStart && now < matchEnd) {
         renderTime(0, 0, 0, 0);
@@ -3592,8 +3943,10 @@ h1 {
       if (!nameEl || !countryEl || !dateEl) return;
 
       function setPlaceholder() {
+        const scheduledMatch = getNextScheduledMatch(Date.now());
         nameEl.textContent = "Игрок определится после сыгранного матча";
         nameEl.classList.add("mvp-name-placeholder");
+        if (scheduledMatch) dateEl.textContent = scheduledMatch.fullDate;
         countryEl.style.display = "none";
         if (cardEl) cardEl.classList.add("is-placeholder");
         if (pointsEl) pointsEl.style.display = "none";
@@ -3630,7 +3983,7 @@ h1 {
       nameEl.textContent = player.name;
       nameEl.classList.remove("mvp-name-placeholder");
       if (cardEl) cardEl.classList.remove("is-placeholder");
-      if (pointsEl) pointsEl.style.display = "inline-flex";
+      if (pointsEl) pointsEl.style.display = "none";
       countryEl.style.display = "inline-flex";
       countryEl.innerHTML = `${flagHtml(player, "mvp-flag")}<span>${escapeHtml(player.country || "Сборная не указана")}</span>`;
       if (latest.date) dateEl.textContent = latest.date;
@@ -3657,6 +4010,7 @@ h1 {
 
         const players = buildPlayers(rawPlayers);
 
+        setMatchSchedule(rawMatches);
         renderLeaderboard(rawLeaderboard, players);
         renderMvp(rawMatches, players);
       } catch (error) {
